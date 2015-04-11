@@ -1,0 +1,8 @@
+body {
+    background-color: rgb(216, 216, 216);
+}
+
+#game-stage-container {
+    display: flex;
+    justify-content: center;
+}

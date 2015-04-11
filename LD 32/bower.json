@@ -1,0 +1,28 @@
+{
+  "name": "LD32-jadernak",
+  "version": "0.0.0",
+  "homepage": "https://github.com/VHonzik/Jadernak-ludum-dares",
+  "authors": [
+    "VHonzik <honzik.vaclav@gmail.com>"
+  ],
+  "description": "LD 32 entry of Jadernak",
+  "keywords": [
+    "LudumDare",
+    "LD",
+    "LD32",
+    "game",
+    "crafty"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "crafty": "~0.6.3",
+    "jquery": "~2.1.3"
+  }
+}
