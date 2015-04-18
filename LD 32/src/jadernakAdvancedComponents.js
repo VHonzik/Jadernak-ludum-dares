@@ -50,7 +50,7 @@ Crafty.c('jac2D', {
     if(typeof attributes.rtpElement !== 'undefined')
     {
       this.parent = attributes.rtpElement;
-      makeRelativeToElement(attributes);
+      this.makeRelativeToElement(attributes);
       
       // follow ?
       if(typeof attributes.rtpFollow !== 'undefined' && attributes.rtpFollow===true)
@@ -84,7 +84,7 @@ Crafty.c('jac2D', {
     if(this.parent != null && typeof attributes.rtpcY !== 'undefined') 
       jacAttributes.cY = this.parent._y +  this.parent._h / 2.0 + attributes.rtpcY;
     this.jacAttr(jacAttributes);
-  }  
+  }
 });
 
 // Component which improves crafty SpriteAnimation component
@@ -92,7 +92,7 @@ Crafty.c('jacAnimation', {
   init: function() {
 		this.requires('SpriteAnimation');
     this.animQueue = [];
-    this.bind('AnimationEnd', $.proxy(this.processQueue,this))
+    this.bind('AnimationEnd', $.proxy(this.endOfAnimation,this))
 	},
   // Prepare for reeling animations from animation sheet
   //    spriteName - name of the sprite under which was animation sheet loaded
@@ -109,16 +109,16 @@ Crafty.c('jacAnimation', {
   //    startFrame - indexes of the the first frame of the animation in format [column,row]
   //    frameCount - number of frames including the startFrame
   //    nextFrame - object which will contain indexes of the next-to-the-last frame in format [column,row]
-  jacReel: function(animationName, startFrame, frameCount, lastFrame) {
-    lastFrame = {};
-    var duration = (frameCount - 1) * GLOBAL.msPerAnimFrame;
+  jacReel: function(animationName, startFrame, frameCount) {
+    this.nextFrame = {};
+    var duration = (frameCount > 1) ? (frameCount - 1) * GLOBAL.msPerAnimFrame : GLOBAL.msPerAnimFrame;
 		var frames = [startFrame];
 		var frameCounter = frameCount-1;
 		var i = this.clampI(startFrame[0]+1);
 		var j = this.clampJ(startFrame[1], startFrame[0]+1);
     
-    lastFrame.i = i;
-    lastFrame.j = j; 
+    this.nextFrame.i = i;
+    this.nextFrame.j = j; 
     
 		while(frameCounter>0)
 		{
@@ -128,8 +128,8 @@ Crafty.c('jacAnimation', {
       j = this.clampJ(j,i+1);
       i = this.clampI(i+1);
       
-      lastFrame.i = i;
-      lastFrame.j = j;   
+      this.nextFrame.i = i;
+      this.nextFrame.j = j;   
 		}
     
 		this.reel(animationName,duration,frames);
@@ -140,11 +140,11 @@ Crafty.c('jacAnimation', {
   //    animations - array of animations definitions in the order they are in the sheet
   //        animation definition is an object with 'animationName' and 'frameCount' properties
   jacReelSheet: function(animations) {
-    var nextFrame = {i:0,j:0};
+    this.nextFrame = {i:0,j:0};
     for(var i=0;i<animations.length;i++)
     {
       var animDef = animations[i];
-      this.jacReel(animDef.animationName,[nextFrame.i,nextFrame.j],animDef.frameCount,nextFrame);
+      this.jacReel(animDef.animationName,[this.nextFrame.i,this.nextFrame.j],animDef.frameCount);
     }
     return this;
   },
@@ -163,33 +163,39 @@ Crafty.c('jacAnimation', {
     return currentI % this.columns;
   },
   
+  endOfAnimation: function() {
+    this.isAnimating = false;
+    this.processQueue();
+  },  
   // Adds animation to the queue
   //    animation - name of the animation
-  jacQueueAnimation: function(animation) {
-    this.queue.append({type:'anim',name:animation});
-    if(this.queue.length == 1)
+  jacQueueAnimation: function(animation, loops) {
+    loops = loops || 1;
+    this.animQueue.push({type:'anim',name:animation,loop: loops});
+    if(this.animQueue.length == 1 && !this.isAnimating)
       this.processQueue();
     return this;
   },
   // Adds general callback to the queue
   //    callback - function to call, it will have entity as this context
   jacQueueCallback: function(callback) {
-    this.queue.append({type:'fun',fun:$.proxy(callback,this)});
-    if(this.queue.length == 1)
+    this.animQueue.push({type:'fun',fun:$.proxy(callback,this)});
+    if(this.animQueue.length == 1 && !this.isAnimating)
       this.processQueue();
     return this;
   },
   
   // Process animation queue, will hook up itself until animation queue is not empty
   processQueue: function() {
-    if(this.queue.length > 0) {
-      var element = this.queue.shift();
+    if(this.animQueue.length > 0) {
+      var element = this.animQueue.shift();
       if(element.type==='anim') {
-        this.animate(element.name);
+        this.animate(element.name,element.loop);
+        this.isAnimating = true;
       }
       else if(element.type==='fun') {
         element.fun();
-        if(this.queue.length > 0)
+        if(this.animQueue.length > 0)
           this.processQueue();
       }
       else {
