@@ -132,7 +132,7 @@ Crafty.c('jacAnimation', {
       lastFrame.j = j;   
 		}
     
-		this.reel(name,duration,frames);
+		this.reel(animationName,duration,frames);
 		
 		return this;
   },
@@ -146,12 +146,13 @@ Crafty.c('jacAnimation', {
       var animDef = animations[i];
       this.jacReel(animDef.animationName,[nextFrame.i,nextFrame.j],animDef.frameCount,nextFrame);
     }
+    return this;
   },
   
   // Helper methods for index clamping
   clampJ : function(currentJ, currentI) {
     var res = currentJ;
-    if(currentI>this.columns) {
+    if(currentI>this.columns-1) {
       res += 1;
     }
     res = Math.min(this.rows-1,res);
