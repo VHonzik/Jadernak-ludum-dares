@@ -66,23 +66,30 @@ Crafty.c('Effects', {
     this.fadeDuration = 0;
     this.fadeTimer = 0;
     
+    this.fadeCallback = null;
+    
     this.shake = false;    
     this.shakeFrequency = 0.01;
     this.shakeTimer = 0;
     this.shakeMagnitude = 40;
     this.shakeDirection = {x:0,y:0};
     
-    this.requires('2D, DOM, Color').attr({x:-50,y:-50,w:GLOBAL.gameResolution.w+50,h:GLOBAL.gameResolution.h+50,z:100})
-    .color("#FFFFFF",0.0);
+    this.requires('2D, DOM, Color').attr({x:-50,y:-50,w:0,h:0,z:1}).color("#FFFFFF",0.0);
     
     var that = this;
-    Crafty.bind('EnterFrame',function(data) { that.update(data.dt/1000.0); });  
+    Crafty.bind('EnterFrame',function(data) { that.update(data.dt/1000.0); });    
+    
   },
   update: function(dt) {
     if(this.fading)
     {
       this.fadeTimer += dt/this.fadeDuration;
-      this.color("#FFFFFF",this.fadeTimer/this.fadeDuration)
+      this.color("#FFFFFF",this.fadeTimer/this.fadeDuration);
+      if(this.fadeCallback !== null && this.fadeTimer/this.fadeDuration >= 1.0) {
+        this.fadeCallback();
+        this.fadeCallback = null;
+        this.fading = false;
+      }
     }
     if(this.shake) {
       this.shakeTimer += dt;
@@ -94,10 +101,14 @@ Crafty.c('Effects', {
       Crafty.viewport.y += this.shakeDirection.y * dt * this.shakeMagnitude;
     }
   },
-  fadeIn: function(duration) {
-    this.fading = true;
-    this.fadeDuration = duration;
-    this.fadeTimer = 0;
+  fadeIn: function(duration, callback) {
+    if(!this.fading) {
+      this.fading = true;
+      this.fadeDuration = duration;
+      this.fadeTimer = 0;
+      this.attr({w:GLOBAL.gameResolution.w+50,h:GLOBAL.gameResolution.h+50,z:100});
+      this.fadeCallback = callback;
+    }
   },
   shakeScreen: function() {
     this.shake = true;

@@ -7,7 +7,6 @@ var Game = function() {
   
   //Tents appearing
   this.tentsTiming = [0.0,2.0,4.0,6.0,40.0,42.0,44.0,60.0,62.0,64.0,66.0];
-  //this.tentsTiming = [0.0,0.0,0.0,0.0, 0,0,0, 0,0,0,0];
   // Hammer tent
   this.planksSecondsPerSpawn = 30.0;
   
@@ -15,7 +14,7 @@ var Game = function() {
   this.beamsSecondsPerSpawn = 30.0;
   
   // Slap tent
-  this.slapSecondsPer = 5;
+  this.slapSecondsPer = 2;
   
   //Madness mechanic
   this.madnessPerSec = 1;
@@ -23,92 +22,46 @@ var Game = function() {
   this.madnessDiminishPerSec = 2;
   this.madnessExhaustionDamage = 20;
   
-  //Dificulty
-  //this.meteorTimer = 11;
+  //Difficulty
   this.meteorTimer = 7*60;
+  this.meteorTime = 7*60;
   
   //Constructor stuff
-   this.emptyTents = [];
-  this.slapTents = [];
-  this.weldTents = [];
-  this.hammerTents = [];
-  this.humans = [];
-  this.hasEnded = false;
-  
-  this.tentsTimer = 0;
-  this.nextToAppearTent = null;
-  this.tentsToAppear = [];
+  this.construct();
 }; 
 
-var assetsObj = {
-    "sprites": {
-        "art/weld.png": {
-            "tile": 80,
-            "tileh": 80,
-            "map": { "weld_sprite": [0,0] }
-        },
-        "art/slap.png": {
-            "tile": 113,
-            "tileh": 80,
-            "map": { "slap_sprite": [0,0] }
-        },
-        "art/hammer.png": {
-            "tile": 94,
-            "tileh": 82,
-            "map": { "hammer_sprite": [0,0] }
-        },
-        "art/building.png": {
-            "tile": 214,
-            "tileh": 404,
-            "map": { "building_sprite": [0,0] }
-        },
-        "art/ramp_scaff.png": {
-            "tile": 197,
-            "tileh": 164,
-            "map": { "ramp_scaff_sprite": [0,0] }
-        },
-        "art/ramp.png": {
-            "tile": 246,
-            "tileh": 216,
-            "map": { "ramp_sprite": [0,0] }
-        },
-        "art/meteor.png": {
-            "tile": 600,
-            "tileh": 350,
-            "map": { "meteor_sprite": [0,0] }
-        },
-        "art/tent.png": {
-            "tile": 115,
-            "tileh": 75,
-            "map": { "tent_sprite": [0,0] }
-        },
-        "art/tent_upgraded.png": {
-            "tile": 115,
-            "tileh": 75,
-            "map": { "tent_up_sprite": [0,0] }
-        },        
-        
-        "art/human_planks.png": {
-            "tile": 54,
-            "tileh": 40,
-            "map": { "human_planks_sprite": [0,0] }
-        },
-        "art/human_madman.png": {
-            "tile": 54,
-            "tileh": 40,
-            "map": { "human_madman_sprite": [0,0] }
-        },
-        "art/human_beams.png": {
-            "tile": 54,
-            "tileh": 40,
-            "map": { "human_beams_sprite": [0,0] }
-        },
-        
-    },
-};
+Game.prototype.setEasy = function() {
+  this.meteorTimer = 7*60;
+  this.meteorTime = 7*60;
+  
+  this.madnessPerSec = 1;
+  this.madnessThreshold = 80;
+  this.madnessDiminishPerSec = 2;
+  this.madnessExhaustionDamage = 20;
+  
+  this.planksRequired = 105;
+  this.beamsRequired = 28;
+}  
+
+Game.prototype.setHard = function() {
+  this.meteorTimer = 5*60+30;
+  this.meteorTime = 5*60+30;
+  
+  this.madnessPerSec = 1;
+  this.madnessThreshold = 80;
+  this.madnessDiminishPerSec = 1;
+  this.madnessExhaustionDamage = 80;
+  
+  this.planksRequired = 85;
+  this.beamsRequired = 23;  
+}  
+
+
 
 // Initialize main scene and game logic
 Game.prototype.init = function() { 
+  this.construct();
+  
   Crafty.background('white');
   this.building = Crafty.e('Building');
   this.rampScaff = Crafty.e('RampScaffolding');
@@ -144,6 +97,26 @@ Game.prototype.init = function() {
   
   var that = this;
   Crafty.bind('EnterFrame',function(data) { that.update(data.dt/1000.0); });    
+}
+
+Game.prototype.construct = function() {
+  this.emptyTents = [];
+  this.slapTents = [];
+  this.weldTents = [];
+  this.hammerTents = [];
+  this.humans = [];
+  this.hasEnded = false;
+
+  this.tentsTimer = 0;
+  this.nextToAppearTent = null;
+  this.tentsToAppear = [];
+  
+  this.firstGongPlayed = false;
+  this.secondGongPlayed = false;
+  
+  this.result = null;
+  
+  this.leftScene = false;
 }
 
 Game.prototype.findFreeSlapTent = function(productionTent) {
@@ -206,13 +179,27 @@ Game.prototype.updateEffects = function(dt) {
 }
 
 Game.prototype.update = function(dt) {
-  this.meteorTimer -= dt;
-  
+  this.meteorTimer -= dt;  
   
   this.updateEffects(dt);
   
   this.appearTents(dt);
   
+  if(this.meteorTimer>0.5*this.meteorTime && !this.firstGongPlayed) {
+      this.firstGongPlayed = true;
+      Crafty.audio.play("gong");
+  }
+  
+    if(this.meteorTimer>0.75*this.meteorTime && !this.secondGongPlayed) {
+      this.secondGongPlayed = true;
+      Crafty.audio.play("gong");
+  }
+  
+  if(this.hasEnded && this.result !== null && !this.leftScene) {
+    this.leftScene = true;
+    Crafty.enterScene(this.result);
+  }
+
   //End
   if(this.meteorTimer<=0 && !this.hasEnded) {
     this.hasEnded = true;
@@ -232,33 +219,34 @@ Game.prototype.update = function(dt) {
     if(this.rampScaff.planksActual>=GLOBAL.game.planksRequired && this.ramp.beamsActual>=GLOBAL.game.beamsRequired) {
       this.meteor.animate('diverted');
       setTimeout(function() {
-            GLOBAL.game.effects.fadeIn(2);
+            GLOBAL.game.effects.fadeIn(2,function() {
+                GLOBAL.game.meteorTimer = GLOBAL.game.meteorTime;
+                GLOBAL.game.effects.shake = false;
+                GLOBAL.game.result = "endingSucces";
+              });
       }, 4000);
     }
     else
     {
       this.meteor.jacQueueAnimation('hit');
       this.meteor.jacQueueCallback(function() {
-        GLOBAL.game.effects.fadeIn(0.1);
+        GLOBAL.game.effects.fadeIn(0.1,function() {
+            GLOBAL.game.meteorTimer = GLOBAL.game.meteorTime;
+            GLOBAL.game.effects.shake = false;
+            GLOBAL.game.result = "endingFail";
+          });
       });      
     }
     
   }
 }
 
-
-// Load game assets
 Game.prototype.loadAssets = function() {
   Crafty.load(assetsObj, 
     function() { //when loaded
-        Crafty.scene("main");
+        Crafty.scene("difficulty");
     },
-
-    function(e) { //progress
-    },
-
-    function(e) { //uh oh, error loading
-    }
+    function(e) {},function(e) {}
   );
 }
 

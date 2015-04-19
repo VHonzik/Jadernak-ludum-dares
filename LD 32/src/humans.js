@@ -154,7 +154,7 @@ Crafty.c('Human',{
   stop: function() {
     this.isStopped = true;
   },
-  remove: function() {
+  removeFromGame: function() {
     GLOBAL.game.humans.splice( $.inArray(this, GLOBAL.game.humans), 1 );
     this.destroy();
   }
@@ -179,7 +179,7 @@ Crafty.c('HumanWithPlanks', {
     this.jacQueueAnimation('disappear');
     this.jacQueueCallback(function(){
       GLOBAL.game.rampScaff.planksDelivered();
-      this.remove();
+      this.removeFromGame();
     });
   });
   }
@@ -203,7 +203,7 @@ Crafty.c('HumanWithBeams', {
     this.jacQueueAnimation('disappear');
     this.jacQueueCallback(function(){
       GLOBAL.game.ramp.beamsDelivered();
-      this.remove();
+      this.removeFromGame();
     });
   });
   }

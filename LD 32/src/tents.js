@@ -98,7 +98,10 @@ Crafty.c('ProducingTent', {
     if(!this.isOccupied) {
       this.sprite(4,0);
     }
-    else if(!this.isProducing) {
+    else if(!this.isProducing && this.stoppedByPlayer) {
+      this.sprite(5,0);
+    }
+    else if(!this.isProducing && ~this.stoppedByPlayer) {
       this.sprite(3,0);
     }
     else if(this.madness>0.9*GLOBAL.game.madnessThreshold) {
@@ -211,6 +214,7 @@ Crafty.c('ProducingTent', {
 
 Crafty.c('HammerTent', {
   init: function() {
+    Crafty.audio.play("hammer");
     this.requires('ProducingTent');
     this.spanwTimer = GLOBAL.game.planksSecondsPerSpawn;
   },
@@ -221,6 +225,7 @@ Crafty.c('HammerTent', {
 
 Crafty.c('WeldTent', {
   init: function() {
+    Crafty.audio.play("weld");
     this.requires('ProducingTent');
     this.spanwTimer =  GLOBAL.game.beamsSecondsPerSpawn;
     
@@ -233,6 +238,7 @@ Crafty.c('WeldTent', {
 
 Crafty.c('SlapTent', {
   init: function() {
+    Crafty.audio.play("slap");
     this.requires('2D,DOM,tent_up_sprite');
     this.handlingSomeone = false;
     this.handlingHuman = null;
@@ -261,7 +267,7 @@ Crafty.c('SlapTent', {
       this.jacQueueAnimation('disappear');
       this.jacQueueCallback(function() {
         human.madmansTent.humanReturned();
-        human.remove();
+        human.removeFromGame();
       });
     });
     
