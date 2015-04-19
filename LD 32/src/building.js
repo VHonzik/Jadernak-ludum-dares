@@ -120,3 +120,23 @@ Crafty.c('Effects', {
       this.shakeFrequency = params.frequency;
   }
 });
+
+Crafty.c('MusicPlayer', {
+  init: function() {
+    this.soundOn = true;
+    this.requires('2D, DOM, sound_toggle_sprite, Mouse').attr({x:928,y:610,w:28,h:26});
+    this.bind('Click',$.proxy(this.toggleSound,this));
+    
+    this.currentMusic = -1;
+    this.music = []
+  },
+  toggleSound: function() {
+    this.soundOn =  !this.soundOn;
+    this.sprite(this.soundOn ? 1 : 0,0);
+  },
+  play: function(sound) {
+    if(this.soundOn) {
+      Crafty.audio.play(sound);
+    }
+  }
+});

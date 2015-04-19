@@ -214,7 +214,7 @@ Crafty.c('ProducingTent', {
 
 Crafty.c('HammerTent', {
   init: function() {
-    Crafty.audio.play("hammer");
+    GLOBAL.game.musicPlayer.play("hammer");
     this.requires('ProducingTent');
     this.spanwTimer = GLOBAL.game.planksSecondsPerSpawn;
   },
@@ -225,7 +225,7 @@ Crafty.c('HammerTent', {
 
 Crafty.c('WeldTent', {
   init: function() {
-    Crafty.audio.play("weld");
+    GLOBAL.game.musicPlayer.play("weld");
     this.requires('ProducingTent');
     this.spanwTimer =  GLOBAL.game.beamsSecondsPerSpawn;
     
@@ -238,7 +238,7 @@ Crafty.c('WeldTent', {
 
 Crafty.c('SlapTent', {
   init: function() {
-    Crafty.audio.play("slap");
+    GLOBAL.game.musicPlayer.play("slap");
     this.requires('2D,DOM,tent_up_sprite');
     this.handlingSomeone = false;
     this.handlingHuman = null;

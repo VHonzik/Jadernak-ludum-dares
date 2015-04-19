@@ -68,6 +68,7 @@ Game.prototype.init = function() {
   this.ramp = Crafty.e('Ramp');
   this.meteor = Crafty.e('Meteor');
   
+  this.musicPlayer = Crafty.e('MusicPlayer');
   this.effects = Crafty.e('Effects');
   
   var x1RowStart = 20, x1Ofset = 150, y1Row=530;
@@ -185,14 +186,14 @@ Game.prototype.update = function(dt) {
   
   this.appearTents(dt);
   
-  if(this.meteorTimer>0.5*this.meteorTime && !this.firstGongPlayed) {
+  if(this.meteorTimer<=0.5*this.meteorTime && !this.firstGongPlayed) {
       this.firstGongPlayed = true;
-      Crafty.audio.play("gong");
+      this.musicPlayer.play("gong");
   }
   
-    if(this.meteorTimer>0.75*this.meteorTime && !this.secondGongPlayed) {
+    if(this.meteorTimer<=0.25*this.meteorTime && !this.secondGongPlayed) {
       this.secondGongPlayed = true;
-      Crafty.audio.play("gong");
+      this.musicPlayer.play("gong");
   }
   
   if(this.hasEnded && this.result !== null && !this.leftScene) {

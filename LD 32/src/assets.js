@@ -90,7 +90,13 @@ var assetsObj = {
             "tile": 118,
             "tileh": 238,
             "map": { "hard_face_sprite": [0,0] }
-        }    
+        },
+        "art/sound_toggle.png": {
+            "tile": 28,
+            "tileh": 26,
+            "map": { "sound_toggle_sprite": [1,0] }
+        }
+        
         
     },
     "audio": {
