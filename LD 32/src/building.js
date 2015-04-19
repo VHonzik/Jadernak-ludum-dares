@@ -21,7 +21,8 @@ Crafty.c('RampScaffolding', {
   },
   update: function(dt) {
     this.planksActual = Math.min(this.planksActual+1,this.planksStored);
-    this.reelPosition(1.0*this.planksActual/GLOBAL.game.planksRequired);
+    var pos = Math.min(1.0*this.planksActual/GLOBAL.game.planksRequired,0.99);
+    this.reelPosition(pos);
   }
 });
 
@@ -46,7 +47,8 @@ Crafty.c('Ramp', {
     {
       this.beamsActual = wanted;
     }
-    this.reelPosition(1.0*this.beamsActual/GLOBAL.game.beamsRequired);
+    var pos = Math.min(1.0*this.beamsActual/GLOBAL.game.beamsRequired,0.99);
+    this.reelPosition(pos);
   }
 });
 
@@ -56,4 +58,54 @@ Crafty.c('Meteor', {
     .initFromAnimSheet('meteor_sprite',95,1)
     .jacReelSheet([{animationName:'diverted',frameCount:3*24},{animationName:'hit',frameCount:95-(3*24)}]);
 	}
+});
+
+Crafty.c('Effects', {
+  init: function() {
+    this.fading = false;
+    this.fadeDuration = 0;
+    this.fadeTimer = 0;
+    
+    this.shake = false;    
+    this.shakeFrequency = 0.01;
+    this.shakeTimer = 0;
+    this.shakeMagnitude = 40;
+    this.shakeDirection = {x:0,y:0};
+    
+    this.requires('2D, DOM, Color').attr({x:-50,y:-50,w:GLOBAL.gameResolution.w+50,h:GLOBAL.gameResolution.h+50,z:100})
+    .color("#FFFFFF",0.0);
+    
+    var that = this;
+    Crafty.bind('EnterFrame',function(data) { that.update(data.dt/1000.0); });  
+  },
+  update: function(dt) {
+    if(this.fading)
+    {
+      this.fadeTimer += dt/this.fadeDuration;
+      this.color("#FFFFFF",this.fadeTimer/this.fadeDuration)
+    }
+    if(this.shake) {
+      this.shakeTimer += dt;
+      if(this.shakeTimer>this.shakeFrequency) {
+        this.shakeDirection = {x:Math.random()*2.0 - 1.0,y:Math.random()*2.0 - 1.0};
+        this.shakeTimer = 0;        
+      }
+      Crafty.viewport.x += this.shakeDirection.x * dt * this.shakeMagnitude;
+      Crafty.viewport.y += this.shakeDirection.y * dt * this.shakeMagnitude;
+    }
+  },
+  fadeIn: function(duration) {
+    this.fading = true;
+    this.fadeDuration = duration;
+    this.fadeTimer = 0;
+  },
+  shakeScreen: function() {
+    this.shake = true;
+  },
+  setShakeParams: function(params) {
+    if(typeof params.magnitude !== 'undefined') 
+      this.shakeMagnitude = params.magnitude;
+    if(typeof params.frequency !== 'undefined') 
+      this.shakeFrequency = params.frequency;
+  }
 });

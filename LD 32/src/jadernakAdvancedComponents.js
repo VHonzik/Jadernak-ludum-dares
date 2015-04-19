@@ -195,8 +195,8 @@ Crafty.c('jacAnimation', {
       }
       else if(element.type==='fun') {
         element.fun();
-        if(this.animQueue.length > 0)
-          this.processQueue();
+        if(this.animQueue.length > 0 && this.processQueue !== undefined)
+            this.processQueue();
       }
       else {
         console.error('Unknown animation queue type.');

@@ -54,185 +54,235 @@ Crafty.c('EmptyTent', {
 			});
 		}
 	},
-  upgradeGeneral: function() {
+  upgradeGeneral: function(newTentName,newTentIconName,tentsContainer) {
     Crafty.trigger('EmptyTentClicked');
     this.isOn = false;
     this.jacQueueAnimation('upgrade');
-    this.jacQueueCallback(function() {
-      var attrs = {x:this._x,y:this._y,w:this._w,h:this._h};
+    this.jacQueueCallback(function() {      
       GLOBAL.game.emptyTents.splice( $.inArray(this, GLOBAL.game.emptyTents), 1 );
-      this.removeComponent('EmptyTent',false).removeComponent('Mouse',false)
-      this.jacReel('normal',[1,6], 1).animate('normal');
-      this.attr(attrs);      
+      var attrs = {x:this._x,y:this._y,w:this._w,h:this._h};
+      var newTent = Crafty.e(newTentName);
+      newTent.attr(attrs);
+      tentsContainer.push(newTent);
+      newTent.icon = Crafty.e(newTentIconName).createAboveTent(newTent);      
+      this.destroy();
     });    
   },
   upgradeToWeldTent: function() {
-    this.upgradeGeneral();
-    this.jacQueueCallback(function() {
-      this.addComponent('WeldTent');      
-      GLOBAL.game.weldTents.push(this);
-      this.icon = Crafty.e('WeldIcon').createAboveTent(this);
-    });    
+    this.upgradeGeneral('WeldTent','WeldIcon',GLOBAL.game.weldTents);
   },
   upgradeToSlapTent: function() {
-    this.upgradeGeneral();
-    this.jacQueueCallback(function() {
-      this.addComponent('SlapTent');      
-      GLOBAL.game.slapTents.push(this);
-      this.icon = Crafty.e('SlapIcon').createAboveTent(this);
-    });    
+    this.upgradeGeneral('SlapTent','SlapIcon',GLOBAL.game.slapTents);
   },
   upgradeToHammerTent: function() {
-    this.upgradeGeneral();
-    this.jacQueueCallback(function() {
-      this.addComponent('HammerTent');      
-      GLOBAL.game.hammerTents.push(this);
-      this.icon = Crafty.e('HammerIcon').createAboveTent(this);
-    });      
+    this.upgradeGeneral('HammerTent','HammerIcon',GLOBAL.game.hammerTents);
   }
 });
 
-Crafty.c('SlapTent', {
+Crafty.c('ProducingTent', {
   init: function() {
-
-  }
-});
-
-Crafty.c('HammerTent', {
-  init: function() {
-    this.spanwTimer = GLOBAL.game.planksSecondsPerSpawn;
+    this.requires('2D,DOM,tent_up_sprite');
     
+    this.madness = 0;
+    this.isProducing = true;
+    this.stoppedByPlayer = false;
+    this.isOccupied = true;    
+    
+    this.isStopped = false;
+    
+  
     var that = this;
     Crafty.bind('EnterFrame',function(data) { that.update(data.dt/1000.0); });   
   },
-  update: function(dt) {
+  updateSmileState: function() {
+    if(!this.isOccupied) {
+      this.sprite(4,0);
+    }
+    else if(!this.isProducing) {
+      this.sprite(3,0);
+    }
+    else if(this.madness>0.9*GLOBAL.game.madnessThreshold) {
+      this.sprite(2,0);
+    }
+    else if(this.madness>0.5*GLOBAL.game.madnessThreshold) {
+      this.sprite(1,0);
+    }
+    else {
+      this.sprite(0,0);
+    }
+  },
+  handleSpawn: function(dt) {
     this.spanwTimer -= dt;
     if(this.spanwTimer <= 0)
     {
-      Crafty.e('HumanWithPlanks').createAndDeliver(this);
+      this.spawn();
+      
       this.spanwTimer =  GLOBAL.game.planksSecondsPerSpawn;
+    }      
+  },
+  diminishMadness: function(dt) {
+    this.madness -= GLOBAL.game.madnessDiminishPerSec * dt;
+    this.madness = Math.max(0,this.madness);
+    
+    //back to work
+    if(this.madness <= 0 && this.isOccupied) {
+      this.isProducing = true;
+      this.stoppedByPlayer = false;
+      this.icon.on();
     }
+  },
+  increaseMadness: function(dt) {
+      this.madness += GLOBAL.game.madnessPerSec * dt;
+      if(this.madness >= GLOBAL.game.madnessThreshold) {
+        this.isProducing = false;
+        this.madness += GLOBAL.game.madnessExhaustionDamage;
+        this.icon.off();
+      }
+  },
+  update: function(dt) {
+    if(this.isStopped)
+      return;
+    
+    //smile state
+    this.updateSmileState();
+    // working
+    if(this.isProducing && this.isOccupied) {
+      this.handleSpawn(dt);
+      this.increaseMadness(dt);
+    }
+    // stopped
+    else if(!this.isProducing && this.isOccupied && this.stoppedByPlayer) {
+      this.diminishMadness(dt);
+    }
+    // madness meltdown
+    else if(!this.isProducing && this.isOccupied && !this.stoppedByPlayer) {
+      //try go for a slap tent if still long way to go
+      if(this.madness >= 0.5 * GLOBAL.game.madnessThreshold)
+      {
+        var slaptent = GLOBAL.game.findFreeSlapTent(this);
+        // go for a slap 
+        if(slaptent != null) {
+          slaptent.reserveSpot();
+          this.isOccupied = false;
+          Crafty.e('HumanWithMadmen').createAndDeliver(this,slaptent);          
+        }
+        // no slap tent - just chill
+        else {
+          this.diminishMadness(dt);
+        }
+      }
+      // Just chill
+      else
+      {
+        this.diminishMadness(dt);
+      }
+    }    
+  },
+  humanArrived: function(human) {
+    console.error('Human was not supposed to arrive here!');
+  },
+  humanReturned: function() {
+    this.madness = 0;
+    this.isOccupied = true;
+    this.isProducing = true;
+    this.stoppedByPlayer = false;
+    this.icon.on();
+  },
+  clickedIcon: function() {
+    if(!this.isOccupied)
+        return;
+    
+    if(this.isProducing) {
+      this.stoppedByPlayer = true;
+      this.isProducing = false;
+      this.icon.off();
+    }
+    else if(!this.isProducing && this.madness < GLOBAL.game.madnessThreshold) {
+      this.stoppedByPlayer = false;
+      this.isProducing = true;
+      this.icon.on();
+    }
+  },
+  stop: function() {
+    this.isStopped = true;
+  }
+});
+
+
+Crafty.c('HammerTent', {
+  init: function() {
+    this.requires('ProducingTent');
+    this.spanwTimer = GLOBAL.game.planksSecondsPerSpawn;
+  },
+  spawn: function(dt) {
+    Crafty.e('HumanWithPlanks').createAndDeliver(this);  
   }
 });
 
 Crafty.c('WeldTent', {
   init: function() {
+    this.requires('ProducingTent');
     this.spanwTimer =  GLOBAL.game.beamsSecondsPerSpawn;
+    
+  },
+  spawn: function(dt) {
+    Crafty.e('HumanWithBeams').createAndDeliver(this);
+  }
+
+});
+
+Crafty.c('SlapTent', {
+  init: function() {
+    this.requires('2D,DOM,tent_up_sprite');
+    this.handlingSomeone = false;
+    this.handlingHuman = null;
+    this.isStopped = false;
+    this.slapTimer = 0;
     
     var that = this;
     Crafty.bind('EnterFrame',function(data) { that.update(data.dt/1000.0); });   
   },
-  update: function(dt) {
-    this.spanwTimer -= dt;
-    if(this.spanwTimer <= 0)
-    {
-      Crafty.e('HumanWithBeams').createAndDeliver(this);
-      this.spanwTimer =  GLOBAL.game.beamsSecondsPerSpawn;
-    }
-  }
-});
-
-Crafty.c('UPIcon', {
-  init: function() {
-    this.requires('Mouse');
-    this.pTent = null;
-    this.isOn = false;
-    this.bind('Click',$.proxy(this.mClick,this));
+  canDoSlapping: function() {
+    return !this.handlingSomeone;
   },
-  setParentTent: function(tent) {
-		this.pTent = tent;
-		return this;
-	},
-  appear: function() {
-    this.jacQueueAnimation('appear');
-    this.jacQueueCallback(function() {  this.isOn = true;});
+  reserveSpot: function() {
+    this.handlingSomeone = true;
   },
-  disappear: function() {
-    if(this.isOn) {
+  humanArrived: function(human) {
+    this.handlingHuman = human;    
+  },
+  releaseHuman: function() {
+    this.slapTimer = 0;
+    this.handlingSomeone = false;
+    var human = this.handlingHuman;
+    
+    human.jacQueueAnimation('appear');
+    human.walkToTent(human.madmansTent,function() {
       this.jacQueueAnimation('disappear');
-      this.isOn = false;
-    }
+      this.jacQueueCallback(function() {
+        human.madmansTent.humanReturned();
+        human.remove();
+      });
+    });
+    
+    this.handlingHuman = null;
+    
   },
-  mClick: function() {
-    if(this.isOn) {      
-      this.upgrade();
-      this.isOn = false;            
-    }
-  }
-});
-
-Crafty.c('SlapUPIcon', {
-  init: function() {
-    this.requires('jac2D, DOM, jacAnimation, UPIcon')
-      .initFromAnimSheet('slap_sprite',6,9)
-      .jacReelSheet([{animationName:'normal',frameCount:1},
-      {animationName:'appear',frameCount:25},
-      {animationName:'disappear',frameCount:25}])
-      .jacReel('hidden',[1,0],1).animate('hidden');
+  update: function(dt) {
+    if(this.isStopped)
+      return;
+    
+    if(this.handlingHuman!=null && this.handlingSomeone) {
+      this.slapTimer += dt;
       
+      if(this.slapTimer>=GLOBAL.game.slapSecondsPer) {        
+        this.releaseHuman();
+      }
+    }    
   },
-  upgrade: function() {
-		this.pTent.upgradeToSlapTent();
-	}
-});
-
-Crafty.c('HammerUPIcon', {
-  init: function() {
-    this.requires('jac2D, DOM, jacAnimation, UPIcon')
-      .initFromAnimSheet('hammer_sprite',6,10)
-      .jacReelSheet([{animationName:'normal',frameCount:1},
-      {animationName:'appear',frameCount:25},
-      {animationName:'disappear',frameCount:25}])
-      .jacReel('hidden',[1,0],1).animate('hidden');
-      
-  },
-  upgrade: function() {
-		this.pTent.upgradeToHammerTent();
-	}
-});
-
-Crafty.c('WeldUPIcon', {
-  init: function() {
-    this.requires('jac2D, DOM, jacAnimation, UPIcon')
-      .initFromAnimSheet('weld_sprite',5,12)
-      .jacReelSheet([{animationName:'normal',frameCount:1},
-      {animationName:'appear',frameCount:25},
-      {animationName:'disappear',frameCount:25}])
-      .jacReel('hidden',[1,0],1).animate('hidden');
-      
-  },
-  upgrade: function() {
-		this.pTent.upgradeToWeldTent();
-	}
-});
-
-
-Crafty.c('WeldIcon', {
-  init: function() {
-    this.requires('jac2D, DOM, weld_sprite').jacAttr({w:80,h:80});
-  },
-  createAboveTent: function(tent) {
-    this.jacAttr({rtpcX:0,rtpcY:-70,rtpElement:tent,rtpFollow:true});
-    return this;
+  stop: function() {
+    this.isStopped = true;
   }
 });
 
-Crafty.c('HammerIcon', {
-  init: function() {
-    this.requires('jac2D, DOM, hammer_sprite').jacAttr({w:94,h:82});
-  },
-  createAboveTent: function(tent) {
-    this.jacAttr({rtpcX:0,rtpcY:-70,rtpElement:tent,rtpFollow:true});
-    return this;
-  }
-});
 
-Crafty.c('SlapIcon', {
-  init: function() {
-    this.requires('jac2D, DOM, slap_sprite').jacAttr({w:113,h:80});
-  },
-  createAboveTent: function(tent) {
-    this.jacAttr({rtpcX:0,rtpcY:-70,rtpElement:tent,rtpFollow:true});
-    return this;
-  }
-});

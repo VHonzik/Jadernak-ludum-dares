@@ -4,13 +4,19 @@ Crafty.c('Human',{
 		this.requires('jac2D, DOM, jacAnimation').jacAttr({w:54,h:40});    
     
     this.speedX = 40;
-    this.speedY = 20;
+    this.speedY = 40;
     this.moveQueue = [];
     this.doingMove = false;
     this.currentMove = null;
     
+    this.isStopped = false;
+    
+    this.flippedX = false;
+    
     var that = this;
     Crafty.bind('EnterFrame',function(data) { that.update(data.dt/1000.0); });    
+    
+    GLOBAL.game.humans.push(this);
 	},
   getTentEntryPoint: function(tent) {
     var res = {};
@@ -37,7 +43,22 @@ Crafty.c('Human',{
     this.moveQueue.push({type:'callback',fun:$.proxy(finishCallback,this)});
     return this;
   },
-  
+  walkToTent: function(tent,humanCallback) {
+    var tentEntry = this.getTentEntryPoint(tent);
+    // Need to change lines?
+    if(Math.abs(this._y-tentEntry.y)> 3) {
+      this.moveQueue.push({type:'move',dir:'x',until:this.goUpXThreshold});
+      this.moveQueue.push({type:'move',dir:'y',until:tentEntry.y});
+      this.moveQueue.push({type:'move',dir:'x',until:tentEntry.x});
+      this.moveQueue.push({type:'callback',fun:$.proxy(humanCallback,this)});
+    }
+    // Go directly
+    else {
+      this.moveQueue.push({type:'move',dir:'x',until:tentEntry.x});
+      this.moveQueue.push({type:'callback',fun:$.proxy(humanCallback,this)});
+    }
+    return this;
+  },
   walkingUpdate: function(dt) {    
     if(!this.doingMove && this.moveQueue.length > 0)
     {
@@ -68,8 +89,20 @@ Crafty.c('Human',{
     if(this.doingMove && this.currentMove != null && this.currentMove.dir === 'x')
     {      
       var dif = this.currentMove.until - this._x;
-      var wantedMove = Math.min(dif,this.speedX*dt);
+      var difAbs = Math.abs(dif);
+      var difSign = dif < 0 ? -1 : 1;
+      var wantedMove = difSign * Math.min(difAbs,this.speedX*dt);
       this.x += wantedMove;
+      
+      if(difSign<0 && !this.flippedX) {
+        this.flip("X");
+        this.flippedX = true;
+      }
+      
+      if(difSign>0 && this.flippedX) {
+        this.unflip("X");
+        this.flippedX = false;
+      }
       
       if(Math.abs(this.x-this.currentMove.until)<0.1)
       {        
@@ -83,15 +116,14 @@ Crafty.c('Human',{
       {
         if(this.animQueue.length == 0) 
         { 
-          if(Math.abs(dif)>this.speedX*40*GLOBAL.msPerAnimFrame/1000.0)
+          if(difAbs>this.speedX*40*GLOBAL.msPerAnimFrame/1000.0)
           {
             this.jacQueueAnimation('walking');           
           }
-          else if(Math.abs(dif)>this.speedX*15*GLOBAL.msPerAnimFrame/1000.0)
+          else if(difAbs>this.speedX*15*GLOBAL.msPerAnimFrame/1000.0)
           {
              this.jacQueueAnimation('endWalking');
           }          
-          
         }
       }
     }
@@ -99,7 +131,9 @@ Crafty.c('Human',{
     if(this.doingMove && this.currentMove != null  && this.currentMove.dir === 'y')
     {
       var dif = this.currentMove.until - this._y;
-      var wantedMove = Math.min(dif,this.speedY*dt);
+      var difAbs = Math.abs(dif);
+      var difSign = dif < 0 ? -1 : 1;
+      var wantedMove = difSign * Math.min(difAbs,this.speedY*dt);
       this.y += wantedMove;
       
       if(Math.abs(this.y-this.currentMove.until)<0.1)
@@ -113,7 +147,16 @@ Crafty.c('Human',{
     }
   },
   update: function(dt) {
+    if(this.isStopped)
+      return;
     this.walkingUpdate(dt);    
+  },
+  stop: function() {
+    this.isStopped = true;
+  },
+  remove: function() {
+    GLOBAL.game.humans.splice( $.inArray(this, GLOBAL.game.humans), 1 );
+    this.destroy();
   }
 });
 
@@ -128,13 +171,15 @@ Crafty.c('HumanWithPlanks', {
       {animationName:'endWalking',frameCount:12},
       {animationName:'side',frameCount:1},
       {animationName:'disappear',frameCount:25},
-    ])
+    ]);
+    
   },
   createAndDeliver: function(tent) {
   this.spawnAtTent(tent).walkToBuilding(function() {
     this.jacQueueAnimation('disappear');
     this.jacQueueCallback(function(){
       GLOBAL.game.rampScaff.planksDelivered();
+      this.remove();
     });
   });
   }
@@ -151,14 +196,41 @@ Crafty.c('HumanWithBeams', {
       {animationName:'endWalking',frameCount:12},
       {animationName:'side',frameCount:1},
       {animationName:'disappear',frameCount:25},
-    ])
+    ]);
   },
   createAndDeliver: function(tent) {
   this.spawnAtTent(tent).walkToBuilding(function() {
     this.jacQueueAnimation('disappear');
     this.jacQueueCallback(function(){
       GLOBAL.game.ramp.beamsDelivered();
+      this.remove();
     });
   });
+  }
+});
+
+
+Crafty.c('HumanWithMadmen', {
+  init: function() {
+    this.madmansTent = null;
+    this.requires('Human')
+    .initFromAnimSheet('human_madman_sprite',6,18)
+    .jacReelSheet([
+      {animationName:'appear',frameCount:25},
+      {animationName:'startWalking',frameCount:12},
+      {animationName:'walking',frameCount:25},
+      {animationName:'endWalking',frameCount:12},
+      {animationName:'side',frameCount:1},
+      {animationName:'disappear',frameCount:25},
+    ])
+  },
+  createAndDeliver: function(origTent,slapTent) {
+    this.madmansTent = origTent;
+    this.spawnAtTent(origTent).walkToTent(slapTent,function(){
+      this.jacQueueAnimation('disappear');
+      this.jacQueueCallback(function(){
+        slapTent.humanArrived(this);
+    });
+    });
   }
 });
