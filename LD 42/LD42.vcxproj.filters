@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\External">
+      <UniqueIdentifier>{7da8e2da-1859-4c46-884c-d19e871ff670}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\LD42">
+      <UniqueIdentifier>{ca4c78ac-e32f-42b2-97cc-3eb8d3a630dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\LD42">
+      <UniqueIdentifier>{7852bac4-c379-43ee-8eda-191f2ff64728}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Sprite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Input.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Time.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL_FontCache\SDL_FontCache.c">
+      <Filter>Source Files\External</Filter>
+    </ClCompile>
+    <ClCompile Include="src\IScene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DesktopScene.cpp">
+      <Filter>Source Files\LD42</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ZoomScene.cpp">
+      <Filter>Source Files\LD42</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SteamScene.cpp">
+      <Filter>Source Files\LD42</Filter>
+    </ClCompile>
+    <ClCompile Include="src\IconSprite.cpp">
+      <Filter>Source Files\LD42</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LostScene.cpp">
+      <Filter>Source Files\LD42</Filter>
+    </ClCompile>
+    <ClCompile Include="src\WonScene.cpp">
+      <Filter>Source Files\LD42</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Sprite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Time.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\IScene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\DesktopScene.h">
+      <Filter>Header Files\LD42</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ZoomScene.h">
+      <Filter>Header Files\LD42</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SteamScene.h">
+      <Filter>Header Files\LD42</Filter>
+    </ClInclude>
+    <ClInclude Include="include\IconSprite.h">
+      <Filter>Header Files\LD42</Filter>
+    </ClInclude>
+    <ClInclude Include="include\LostScene.h">
+      <Filter>Header Files\LD42</Filter>
+    </ClInclude>
+    <ClInclude Include="include\WonScene.h">
+      <Filter>Header Files\LD42</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

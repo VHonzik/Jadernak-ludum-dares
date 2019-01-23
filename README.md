@@ -10,3 +10,6 @@ Links to the respective LD pages:
 * [LD 34](http://ludumdare.com/compo/ludum-dare-34/?action=preview&uid=66283) - Cooperated with a friend - Jam (so no source codes)
 * [LD 35](http://ludumdare.com/compo/ludum-dare-35/?action=preview&uid=36014)
 * [LD 38](https://ldjam.com/events/ludum-dare/38/small-world-of-underbury)
+* LD 39 - Have not finished
+* [LD 42](https://ldjam.com/events/ludum-dare/42/your-pc-run-out-of-space)
+* LD 43 - Have not finished
