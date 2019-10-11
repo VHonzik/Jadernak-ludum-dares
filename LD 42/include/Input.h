@@ -35,6 +35,7 @@ namespace CherEngine
     KeyState _rightMouseButton;
     float _leftMBDoubleClickTimer;
     bool _leftMBDoubleClick;
+
   };
 
   extern Input GInput;
