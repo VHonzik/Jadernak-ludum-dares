@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Engine">
+      <UniqueIdentifier>{136509da-0e97-459c-a79c-2450e8a3e7d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\GameObjects">
+      <UniqueIdentifier>{c827a09e-ba00-4055-b5fe-ce65eb60ccb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Scenes">
+      <UniqueIdentifier>{52b0ac1f-def9-4c1b-a308-148c131453f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\LD45">
+      <UniqueIdentifier>{667ac36c-5a0f-4b2f-9724-bd26275a1b38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine">
+      <UniqueIdentifier>{0152fa51-2593-4fb2-91a7-556ed2c1acfc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\LD45">
+      <UniqueIdentifier>{0773e9db-a36f-4af1-9a00-9d588bfac32f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\GameObjects">
+      <UniqueIdentifier>{7f2fc436-c027-4705-a44e-6d62d5dde84d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Scenes">
+      <UniqueIdentifier>{02a12ffa-c1c2-46b9-b5d5-e39c05eb63fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\LD45\Scenes">
+      <UniqueIdentifier>{3ad73545-532a-4e8d-8514-d34fc40bfce3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\LD45\Scenes">
+      <UniqueIdentifier>{9edde8b0-7548-4bd3-8069-189401f0189a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\LD45\GameObjects">
+      <UniqueIdentifier>{e569c972-ddc6-4bce-8a51-e14c3edf068b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\LD45\GameObjects">
+      <UniqueIdentifier>{4cc9f835-94a6-4d3e-acb5-9a4ac8eb61f2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Engine\BoxSprite.cpp">
+      <Filter>Source Files\Engine\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Button.cpp">
+      <Filter>Source Files\Engine\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Checkbox.cpp">
+      <Filter>Source Files\Engine\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Dropdown.cpp">
+      <Filter>Source Files\Engine\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\FTC.cpp">
+      <Filter>Source Files\Engine\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\ICompositeObject.cpp">
+      <Filter>Source Files\Engine\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\ITextObject.cpp">
+      <Filter>Source Files\Engine\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\ProgressBar.cpp">
+      <Filter>Source Files\Engine\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Slider.cpp">
+      <Filter>Source Files\Engine\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Sprite.cpp">
+      <Filter>Source Files\Engine\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Text.cpp">
+      <Filter>Source Files\Engine\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\TextBox.cpp">
+      <Filter>Source Files\Engine\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\AlignedGroup.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Audio.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Input.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Game.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Camera.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Settings.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\MainMenuScene.cpp">
+      <Filter>Source Files\Engine\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\OptionsMenuScene.cpp">
+      <Filter>Source Files\Engine\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LD45\main.cpp">
+      <Filter>Source Files\LD45</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\EngineTime.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LD45\PlayScene.cpp">
+      <Filter>Source Files\LD45\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LD45\Dice.cpp">
+      <Filter>Source Files\LD45\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LD45\Upgrade.cpp">
+      <Filter>Source Files\LD45\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Grid.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LD45\AI.cpp">
+      <Filter>Source Files\LD45</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Tooltip.cpp">
+      <Filter>Source Files\Engine\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LD45\DiceBuy.cpp">
+      <Filter>Source Files\LD45\GameObjects</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Engine\BoxSprite.h">
+      <Filter>Header Files\Engine\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Button.h">
+      <Filter>Header Files\Engine\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Checkbox.h">
+      <Filter>Header Files\Engine\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Dropdown.h">
+      <Filter>Header Files\Engine\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\FTC.h">
+      <Filter>Header Files\Engine\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\ICompositeObject.h">
+      <Filter>Header Files\Engine\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\ITextObject.h">
+      <Filter>Header Files\Engine\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\ProgressBar.h">
+      <Filter>Header Files\Engine\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Slider.h">
+      <Filter>Header Files\Engine\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Sprite.h">
+      <Filter>Header Files\Engine\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Text.h">
+      <Filter>Header Files\Engine\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\TextBox.h">
+      <Filter>Header Files\Engine\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\MainMenuScene.h">
+      <Filter>Header Files\Engine\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\OptionsMenuScene.h">
+      <Filter>Header Files\Engine\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Aligment.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\AlignedGroup.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Audio.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Camera.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\DisplayModeInfo.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\EngineSettings.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\EngineStyles.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Game.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Input.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\IScene.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Settings.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\SettingsFile.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Style.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Texture.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Utils.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LD45\LD45Styles.h">
+      <Filter>Header Files\LD45</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\EngineTime.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LD45\PlayScene.h">
+      <Filter>Header Files\LD45\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LD45\Dice.h">
+      <Filter>Header Files\LD45\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LD45\Upgrade.h">
+      <Filter>Header Files\LD45\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Grid.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LD45\AI.h">
+      <Filter>Header Files\LD45</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Tooltip.h">
+      <Filter>Header Files\Engine\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LD45\DiceBuy.h">
+      <Filter>Header Files\LD45\GameObjects</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
