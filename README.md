@@ -1,6 +1,6 @@
 # Jadernak-ludum-dares
 
-This is a repository for my past and future games made in Ludum dare compo or possibly jam.
+This is a repository for my past and future games made for Ludum Dare Compo or possibly Jam.
 
 Links to the respective LD pages:
 
@@ -15,3 +15,4 @@ Links to the respective LD pages:
 - [LD 42 - Your PC run out of space](https://ldjam.com/events/ludum-dare/42/your-pc-run-out-of-space)
 - [LD 44 - Almost free](https://ldjam.com/events/ludum-dare/44/almost-free) - Cooperated with friends - Jam (so no source codes)
 - [LD 45 - Start with no dice](https://ldjam.com/events/ludum-dare/45/start-with-no-dice)
+- [LD 46 - Emergency Override](https://ldjam.com/events/ludum-dare/46/emergency-override)
