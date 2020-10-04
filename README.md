@@ -16,4 +16,4 @@ Links to the respective LD pages:
 - [LD 44 - Almost free](https://ldjam.com/events/ludum-dare/44/almost-free) - Cooperated with friends - Jam (so no source codes)
 - [LD 45 - Start with no dice](https://ldjam.com/events/ludum-dare/45/start-with-no-dice)
 - [LD 46 - Emergency Override](https://ldjam.com/events/ludum-dare/46/emergency-override)
-- [LF 47 - Rim of Zitra](https://ldjam.com/events/ludum-dare/47/rim-of-zitra)
+- [LD 47 - Rim of Zitra](https://ldjam.com/events/ludum-dare/47/rim-of-zitra)
