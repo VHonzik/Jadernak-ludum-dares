@@ -1,0 +1,1416 @@
+fileFormatVersion: 2
+guid: e1b0694fee4943043895d7402b35d1b1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 778907560209757096
+    second: RemoteControlBackground
+  - first:
+      213: -3052234216604858665
+    second: RemoteControlPowerButton_0
+  - first:
+      213: -1909220438446637037
+    second: RemoteControlPowerButton_1
+  - first:
+      213: -1893330662448073955
+    second: RemoteControlOneButton_0
+  - first:
+      213: -1131231908698613429
+    second: RemoteControlOneButton_1
+  - first:
+      213: 2504867474960742304
+    second: RemoteControlTwoButton_0
+  - first:
+      213: -8144580504020774827
+    second: RemoteControlTwoButton_1
+  - first:
+      213: 8934138295862348322
+    second: RemoteControlThreeButton_0
+  - first:
+      213: 3039468150057531593
+    second: RemoteControlThreeButton_1
+  - first:
+      213: 7244711853423772836
+    second: RemoteControlFourButton_0
+  - first:
+      213: -4762935156688639815
+    second: RemoteControlFourButton_1
+  - first:
+      213: 5460250281357297883
+    second: RemoteControlFiveButton_0
+  - first:
+      213: -3662988496161288185
+    second: RemoteControlFiveButton_1
+  - first:
+      213: 747683304294560260
+    second: RemoteControlSixButton_0
+  - first:
+      213: -3002553009736196406
+    second: RemoteControlSixButton_1
+  - first:
+      213: 8593425426399185371
+    second: RemoteControlSevenButton_0
+  - first:
+      213: 4499631683360139233
+    second: RemoteControlSevenButton_1
+  - first:
+      213: 1490959679494791977
+    second: RemoteControlEightButton_0
+  - first:
+      213: 944047690721142209
+    second: RemoteControlEightButton_1
+  - first:
+      213: 779664444694235803
+    second: RemoteControlNineButton_0
+  - first:
+      213: 8516597991489720132
+    second: RemoteControlNineButton_1
+  - first:
+      213: -8315272744288126455
+    second: RemoteControlZeroButton_0
+  - first:
+      213: 1784129210901203915
+    second: RemoteControlZeroButton_1
+  - first:
+      213: 8371900118331358494
+    second: RemoteControlSpaceButton_0
+  - first:
+      213: 5987582029243191963
+    second: RemoteControlSpaceButton_1
+  - first:
+      213: 2665708354029488604
+    second: RemoteControlBackspaceButton_0
+  - first:
+      213: 7456890629808246992
+    second: RemoteControlBackspaceButton_1
+  - first:
+      213: -8623098582384584003
+    second: RemoteControlGreenButton_0
+  - first:
+      213: 6939922546312649664
+    second: RemoteControlGreenButton_1
+  - first:
+      213: 335438339098611316
+    second: RemoteControlRedButton_0
+  - first:
+      213: 3628420178911661047
+    second: RemoteControlRedButton_1
+  - first:
+      213: 4399856255715545782
+    second: RemoteControlBlueButton_0
+  - first:
+      213: -4052170605741568865
+    second: RemoteControlBlueButton_1
+  - first:
+      213: -300306475443619266
+    second: RemoteControlYellowButton_0
+  - first:
+      213: 5316518971555029763
+    second: RemoteControlYellowButton_1
+  - first:
+      213: 633397315634785322
+    second: RemoteControlOKButton_0
+  - first:
+      213: -2994246325672537061
+    second: RemoteControlOKButton_1
+  - first:
+      213: -7777035814363151207
+    second: RemoteControlHomeButton_1
+  - first:
+      213: 1097286240954335818
+    second: RemoteControlHomeButton_0
+  - first:
+      213: 1796481656719019095
+    second: RemoteControlMuteButton_1
+  - first:
+      213: -5716476798398834411
+    second: RemoteControlMuteButton_0
+  - first:
+      213: -5088719379500135790
+    second: RemoteControlVolumeUpButton_0
+  - first:
+      213: -8695758016054038902
+    second: RemoteControlVolumeUpButton_1
+  - first:
+      213: 598317349072971351
+    second: RemoteControlForwardButton_0
+  - first:
+      213: -6350961591181793607
+    second: RemoteControlForwardButton_1
+  - first:
+      213: -520183809989979504
+    second: RemoteControlBackwardsButton_0
+  - first:
+      213: -6883146867445494057
+    second: RemoteControlBackwardsButton_1
+  - first:
+      213: 2481596424262269007
+    second: RemoteControlVolumeDownButton_0
+  - first:
+      213: -2458239271479253
+    second: RemoteControlVolumeDownButton_1
+  - first:
+      213: -7480149022428015624
+    second: RemoteControlArrowButton_L
+  - first:
+      213: -7383386439297915747
+    second: RemoteControlArrowButton_N
+  - first:
+      213: 3082154228525584494
+    second: RemoteControlArrowButton_U
+  - first:
+      213: 3605510012072290458
+    second: RemoteControlArrowButton_R
+  - first:
+      213: 2110000535615246864
+    second: RemoteControlArrowButton_D
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RemoteControlBackground
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 104
+        width: 85
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a33b279c4c3fca00800000000000000
+      internalID: 778907560209757096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlPowerButton_0
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 6
+        width: 13
+        height: 13
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d689f3c62944a5d0800000000000000
+      internalID: -3052234216604858665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlPowerButton_1
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 6
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 310097070261185e0800000000000000
+      internalID: -1909220438446637037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlOneButton_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 31
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d137d663bc989b5e0800000000000000
+      internalID: -1893330662448073955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlOneButton_1
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 31
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b499e63929e0d40f0800000000000000
+      internalID: -1131231908698613429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlTwoButton_0
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 9
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a7f67672b313c220800000000000000
+      internalID: 2504867474960742304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlTwoButton_1
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 71
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5501545fe23a8fe80800000000000000
+      internalID: -8144580504020774827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlThreeButton_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 9
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22ac61be17f6cfb70800000000000000
+      internalID: 8934138295862348322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlThreeButton_1
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 9
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c8fa4ebd2c5e2a20800000000000000
+      internalID: 3039468150057531593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlFourButton_0
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 18
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a4c26beb036a8460800000000000000
+      internalID: 7244711853423772836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlFourButton_1
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 18
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b8aa59c5b7a6edb0800000000000000
+      internalID: -4762935156688639815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlFiveButton_0
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 19
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd8470583b4b6cb40800000000000000
+      internalID: 5460250281357297883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlFiveButton_1
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 18
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 700d6fdbe537a2dc0800000000000000
+      internalID: -3662988496161288185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlSixButton_0
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 19
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 402b7fcf00e406a00800000000000000
+      internalID: 747683304294560260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlSixButton_1
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 19
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aced46322f9c456d0800000000000000
+      internalID: -3002553009736196406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlSevenButton_0
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 20
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd9455835eaf14770800000000000000
+      internalID: 8593425426399185371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlSevenButton_1
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 19
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e726ca0d27e17e30800000000000000
+      internalID: 4499631683360139233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlEightButton_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 20
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 923a7b6dde3f0b410800000000000000
+      internalID: 1490959679494791977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlEightButton_1
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 20
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c526787f5ee91d00800000000000000
+      internalID: 944047690721142209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlNineButton_0
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 29
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9a800e7eace1da00800000000000000
+      internalID: 779664444694235803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlNineButton_1
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 29
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44fcc8910c8013670800000000000000
+      internalID: 8516597991489720132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlZeroButton_0
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 30
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90af73ace773a9c80800000000000000
+      internalID: -8315272744288126455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlZeroButton_1
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 29
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcb0a29801082c810800000000000000
+      internalID: 1784129210901203915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlSpaceButton_0
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 30
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1df0382dc6fe2470800000000000000
+      internalID: 8371900118331358494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlSpaceButton_1
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 30
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b929d8cc12a281350800000000000000
+      internalID: 5987582029243191963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlBackspaceButton_0
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 31
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd908bcdf9f7ef420800000000000000
+      internalID: 2665708354029488604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlBackspaceButton_1
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 30
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d0d8aef4823c7760800000000000000
+      internalID: 7456890629808246992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlGreenButton_0
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 1
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbadac5c689945880800000000000000
+      internalID: -8623098582384584003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlGreenButton_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cb90bd59ce8f4060800000000000000
+      internalID: 6939922546312649664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlRedButton_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 0
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47e05066467b7a400800000000000000
+      internalID: 335438339098611316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlRedButton_1
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 9
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fb83e3bdecba5230800000000000000
+      internalID: 3628420178911661047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlBlueButton_0
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 10
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b294b004fd6f0d30800000000000000
+      internalID: 4399856255715545782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlBlueButton_1
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 9
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9c8e7bad4cc3c7c0800000000000000
+      internalID: -4052170605741568865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlYellowButton_0
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 9
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3afe670ad815dbf0800000000000000
+      internalID: -300306475443619266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlYellowButton_1
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 9
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 303a92526d118c940800000000000000
+      internalID: 5316518971555029763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlOKButton_0
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 41
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2ce810b0874ac800800000000000000
+      internalID: 633397315634785322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlOKButton_1
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 41
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b14154cb4dc4276d0800000000000000
+      internalID: -2994246325672537061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlHomeButton_1
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 40
+        width: 25
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 994c46f912b621490800000000000000
+      internalID: -7777035814363151207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlHomeButton_0
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 55
+        width: 25
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a42c101c5085a3f00800000000000000
+      internalID: 1097286240954335818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlMuteButton_1
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 55
+        width: 25
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75c0e327c826ee810800000000000000
+      internalID: 1796481656719019095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlMuteButton_0
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 40
+        width: 25
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 519dca893aefaa0b0800000000000000
+      internalID: -5716476798398834411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlVolumeUpButton_0
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 286
+        width: 19
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29a8f3f7fac3169b0800000000000000
+      internalID: -5088719379500135790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlVolumeUpButton_1
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 254
+        width: 19
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8ee7501826725780800000000000000
+      internalID: -8695758016054038902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlForwardButton_0
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 222
+        width: 19
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 756a27e7576ad4800800000000000000
+      internalID: 598317349072971351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlForwardButton_1
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 190
+        width: 19
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b6a577e41adcd7a0800000000000000
+      internalID: -6350961591181793607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlBackwardsButton_0
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 158
+        width: 19
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09253a3b49fe7c8f0800000000000000
+      internalID: -520183809989979504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlBackwardsButton_1
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 126
+        width: 19
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7de811d74662a70a0800000000000000
+      internalID: -6883146867445494057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlVolumeDownButton_0
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 94
+        width: 19
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f483800ccc6607220800000000000000
+      internalID: 2481596424262269007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlVolumeDownButton_1
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 72
+        width: 19
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2853719e3447fff0800000000000000
+      internalID: -2458239271479253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlArrowButton_L
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 256
+        width: 61
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f3513b781c213890800000000000000
+      internalID: -7480149022428015624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlArrowButton_N
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 194
+        width: 61
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d94263ef621f88990800000000000000
+      internalID: -7383386439297915747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlArrowButton_U
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 70
+        width: 61
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e605c3ed0f206ca20800000000000000
+      internalID: 3082154228525584494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlArrowButton_R
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 42
+        width: 61
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a98eeafc048590230800000000000000
+      internalID: 3605510012072290458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RemoteControlArrowButton_D
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 132
+        width: 61
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0121b31de4a384d10800000000000000
+      internalID: 2110000535615246864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

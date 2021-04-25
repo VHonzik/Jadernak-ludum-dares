@@ -17,3 +17,4 @@ Links to the respective LD pages:
 - [LD 45 - Start with no dice](https://ldjam.com/events/ludum-dare/45/start-with-no-dice)
 - [LD 46 - Emergency Override](https://ldjam.com/events/ludum-dare/46/emergency-override)
 - [LD 47 - Rim of Zitra](https://ldjam.com/events/ludum-dare/47/rim-of-zitra)
+- [LD 48 - Fathom pass](https://ldjam.com/events/ludum-dare/48/fathom-pass)
