@@ -7,7 +7,7 @@ Links to the respective LD pages:
 - [LD 29 - Pawn](http://www.ludumdare.com/compo/ludum-dare-29/?action=preview&uid=36014)
 - [LD 31 - No Way!](http://ludumdare.com/compo/ludum-dare-31/?action=preview&uid=36014)
 - [LD 32 - Here's a thought](http://ludumdare.com/compo/ludum-dare-32/?action=preview&uid=36014)
-- [LD 34 - Stargazer](http://ludumdare.com/compo/ludum-dare-34/?action=preview&uid=66283) - Cooperated with a friend - Jam (so no source codes)
+- [LD 34 - Stargazer](http://ludumdare.com/compo/ludum-dare-34/?action=preview&uid=66283) - Cooperated with a friend - Jam
 - [LD 35 - Hunters and Hunted](http://ludumdare.com/compo/ludum-dare-35/?action=preview&uid=36014)
 - [LD 36 - "Ancient" and Ancient](http://ludumdare.com/compo/ludum-dare-36/?action=preview&uid=36014)
 - [LD 38 - small World of Underbury](https://ldjam.com/events/ludum-dare/38/small-world-of-underbury)
