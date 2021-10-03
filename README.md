@@ -18,3 +18,4 @@ Links to the respective LD pages:
 - [LD 46 - Emergency Override](https://ldjam.com/events/ludum-dare/46/emergency-override)
 - [LD 47 - Rim of Zitra](https://ldjam.com/events/ludum-dare/47/rim-of-zitra)
 - [LD 48 - Fathom pass](https://ldjam.com/events/ludum-dare/48/fathom-pass)
+- [LD 49 - Girl in a red car](https://ldjam.com/events/ludum-dare/49/girl-in-a-red-car)
